@@ -9,11 +9,10 @@ The course consists of eight lessons.
 - [Lesson 1](lesson1/lesson1.md) - Installation of programs, Getting access to MetaCentrum
 - [Lesson 2](lesson2/lesson2.md) - Openstacks - Creating the instance
 - [Lesson 3](lesson3/lesson3.md) - Accessing Openstacks, Introduction to UNIX
-
-[Lesson 4](lesson4/lesson4.md) - Installation of Linux programs and scripts
-[Lesson 5](lesson5/lesson5.md) - Introduction to FastQ data
-[Lesson 6](lesson6/lesson6.md) - Data analysis - processing of replicates
-[Lesson 7](lesson7/lesson7.md) - Data analysis - demultiplexing, clustering
-[Lesson 8](lesson8/lesson8.md) - Preparing the swarm table, Blast searches
+- [Lesson 4](lesson4/lesson4.md) - Installation of Linux programs and scripts
+- [Lesson 5](lesson5/lesson5.md) - Introduction to FastQ data
+- [Lesson 6](lesson6/lesson6.md) - Data analysis - processing of replicates
+- [Lesson 7](lesson7/lesson7.md) - Data analysis - demultiplexing, clustering
+- [Lesson 8](lesson8/lesson8.md) - Preparing the swarm table, Blast searches
 
 Enjoy!
