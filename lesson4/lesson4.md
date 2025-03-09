@@ -147,4 +147,4 @@ conda create --name py2 python=2.7
 
 ---
 
-[Lesson 3](../lesson3/lesson3.md) | [Lesson 5](../lesson5/lesson5.md)
+[Previous Lesson](../lesson3/lesson3.md) | [Next Lesson](../lesson5/lesson5.md)
