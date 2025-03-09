@@ -13,11 +13,11 @@ In this lesson, we will upload and inspect Fastq data from a study on the soil d
 
 3. **Upload raw data of Illumina reads**:
    - To `RUN1`:
-     - `220902_R1.fastq.gz`
-     - `220902_R2.fastq.gz`
+     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
+     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
    - To `RUN2`:
-     - `221122_R1.fastq.gz`
-     - `221122_R2.fastq.gz`
+     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
+     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
 
 ## Basic Work with Large Files
 
@@ -36,7 +36,7 @@ We can quickly peek into a compressed file without fully decompressing it using 
 
 ### Inspecting FASTQ Sequences
 ```bash
-zcat 220902_R1.fastq.gz | head
+zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
 ```
 
 1. **The first line starts with @ and contains the sequence name**:
@@ -61,49 +61,49 @@ zcat 220902_R1.fastq.gz | head
 
 1. **Count the number of sequences**:
    ```bash
-   zcat 220902_R1.fastq.gz | wc -l | awk '{print $1/4}'
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
    Or count the occurrences of the instrument name at the start of lines:
    ```bash
-   zcat 220902_R1.fastq.gz | grep "^@M01126" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@M01126" | wc -l
    ```
 
 2. **View sequence names** (`q` to quit `more`):
    ```bash
-   zcat 220902_R1.fastq.gz | grep "^@" | more
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@" | more
    ```
 
 3. **View sequences**:
    ```bash
-   zcat 220902_R1.fastq.gz | grep "^@" -A1 | grep -v "^@" | head
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@" -A1 | grep -v "^@" | head
    ```
 
 4. **Search for sequences with a specific barcode**:
    ```bash
-   zcat 220902_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
    ```
 
 5. **Count the number of sequences with a specific barcode**:
    ```bash
-   zcat 220902_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_R1.fastq.gz | grep --color=always "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_R1.fastq.gz | grep --color=always "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
    ```
 
 6. **Extract all barcodes with their counts**:
    ```bash
-   zcat 220902_R1.fastq.gz | grep "@" -A 1 | grep -v "^--" | grep -v "@" | cut -c 4-11 | sort | uniq -c | sort -n -r
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "@" -A 1 | grep -v "^--" | grep -v "@" | cut -c 4-11 | sort | uniq -c | sort -n -r
    ```
 
 7. **Check for Illumina adapters in sequences**:
    ```bash
-   zcat 220902_R1.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC" | wc -l
    ```
 
 8. **Extract the first 1 million reads**:
    ```bash
-   zcat 220902_R1.fastq.gz | head -n 4000000 | gzip > subset_220902_R1.fastq.gz
-   zcat 220902_R2.fastq.gz | head -n 4000000 | gzip > subset_220902_R2.fastq.gz
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head -n 4000000 | gzip > subset_220902_R1.fastq.gz
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz | head -n 4000000 | gzip > subset_220902_R2.fastq.gz
    # Verify the extraction
    zcat subset_220902_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
