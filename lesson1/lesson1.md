@@ -1,4 +1,4 @@
-# Module 1 - Lesson 1
+# Lesson 1
 
 ## Installation of programs, Getting access to MetaCentrum
 
