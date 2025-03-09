@@ -112,5 +112,5 @@ BiocManager::install("phyloseq")
    - Currently, virtual computers are available in Brno or Ostrava.
 
 
-**Note:** MetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
-**Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
+- **Note:** MetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
+- **Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
