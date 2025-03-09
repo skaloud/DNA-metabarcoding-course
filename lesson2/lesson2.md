@@ -71,3 +71,7 @@ Follow the steps provided in the [Getting Started Guide](https://docs.e-infra.cz
 You can access the virtual machine using tools like WinSCP, MobaXterm, etc., using the IP address and the saved key.
 
 Enjoy setting up your virtual machine and exploring the capabilities of OpenStack!
+
+---
+
+[Previous Lesson](../lesson1/lesson1.md) | [Next Lesson](../lesson3/lesson3.md)
