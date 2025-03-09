@@ -106,7 +106,7 @@ Please download these four files and store them in your computer:
      - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
 
 In addition, download the other files which will be used during the course:
-- [forward_labels.csv](data/forward_labels.csv) = list of forward indexes (Lesson 7)
+- [forward_labels.csv](../data/forward_labels.csv) = list of forward indexes (Lesson 7)
 - [reverse_labels.csv](link-to-file) = list of reverse indexes (Lesson 7)
 - [barcodes.xlsx](link-to-file) = the table of sample and barcode information
 - [generating codes.R](link-to-file) = R script to generate the Linux codes for (Lesson 7)
