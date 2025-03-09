@@ -83,7 +83,8 @@ BiocManager::install("phyloseq")
 
 ## Download Data
 - In this course, we will work on data related to a study on the soil diversity of green algae in various parts of Europe.
-- The data are paired-end fastq reads from two replicate runs (**Note**: The files are big!)
+- The data consists of paired-end fastq reads from two replicate runs (**Note**: The files are large!)
+- Please download these four files and store them in your computer:
 
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
