@@ -1,4 +1,4 @@
-# Module 3 - Lesson 1
+# Lesson 3
 
 ## Accessing Openstacks, Introduction to UNIX
 
