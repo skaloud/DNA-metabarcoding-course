@@ -108,11 +108,11 @@ Please download these four files and store them in your computer:
 In addition, download the other files which will be used during the course:
 - [forward_labels.csv](../forward_labels.csv) = list of forward indexes (Lesson 7)
 - [reverse_labels.csv](../reverse_labels.csv) = list of reverse indexes (Lesson 7)
-- [barcodes.xlsx](link-to-file) = the table of sample and barcode information
-- [generating codes.R](link-to-file) = R script to generate the Linux codes for (Lesson 7)
-- [comparing_replicates.R](link-to-file) = R script to compare the replicates (Lesson 8)
-- [selection_of_sequences.R](link-to-file) = R script to extract the sequences of selected swarms (Lesson 8)
-- [merging_by_taxonomy.R](link-to-file) = R script to merge swarms identified to belong to the same species (Lesson 8)
+- [barcodes.xlsx](../barcodes.xlsx) = the table of sample and barcode information
+- [generating codes.R](../generating codes.R) = R script to generate the Linux codes for (Lesson 7)
+- [comparing_replicates.R](../comparing_replicates.R) = R script to compare the replicates (Lesson 8)
+- [selection_of_sequences.R](../selection_of_sequences.R) = R script to extract the sequences of selected swarms (Lesson 8)
+- [merging_by_taxonomy.R](../merging_by_taxonomy.R) = R script to merge swarms identified to belong to the same species (Lesson 8)
 
 ## Getting Access to MetaCentrum
 
