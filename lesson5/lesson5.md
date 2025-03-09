@@ -11,13 +11,13 @@ In this lesson, we will upload and inspect Fastq data from a study on the soil d
    mkdir /home/ubuntu/RUN2
    ```
 
-3. **Upload raw data of Illumina reads**:
+3. **Upload raw data of Illumina reads**: (Data downloaded in Lesson 1)
    - To `RUN1`:
-     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
-     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
+     - 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz
+     - 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz
    - To `RUN2`:
-     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
-     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
+     - 221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz
+     - 221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz
 
 ## Basic Work with Large Files
 
