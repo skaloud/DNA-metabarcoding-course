@@ -1,4 +1,4 @@
-# Module 4 - Lesson 1
+# Lesson 4
 
 ## Installation of Linux programs and scripts
 
