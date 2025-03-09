@@ -103,10 +103,6 @@ BiocManager::install("phyloseq")
      
    - **Batch job**: Once everything is debugged, calculations are typically run via batch jobs, where you prepare a script that defines data upload, calculations, and saving the results back to the account.
 
-**Note:** TMetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
-**Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
-
-
 2. **OnDemand**:
    - Access MetaCentrum via selected programs (e.g., running R Studio to speed up complex R calculations).
 
@@ -114,3 +110,7 @@ BiocManager::install("phyloseq")
    - Computational virtual clusters in the Linux environment, which will be used in this course.
    - Documentation: [e-INFRA CZ](https://docs.e-infra.cz/)
    - Currently, virtual computers are available in Brno or Ostrava.
+
+
+**Note:** MetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
+**Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
