@@ -133,4 +133,4 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
 
 ---
 
-[Previous Lesson](../Lesson4/lesson1.md) | [Next Lesson](../Lesson6/lesson1.md)
+[Previous Lesson](../lesson4/lesson4.md) | [Next Lesson](../lesson6/lesson6.md)
