@@ -1,8 +1,6 @@
-# Lesson 1: 
+# Lesson 1: Installation of Programs & Getting Access to MetaCentrum
 
-## Installation of Programs & Getting Access to MetaCentrum
-
-### Programs Used in the Course
+## Programs Used in the Course
 in this course we will use the following programs. Below are instructions for installing them.
 
 - **Spreadsheet viewer** (MS Excel, OpenOffice Calc, Google Sheets, etc.)
@@ -14,9 +12,9 @@ in this course we will use the following programs. Below are instructions for in
 - **IQ-TREE**
 - **FigTree**
 
-### Installation Instructions
+## Installation Instructions
 
-#### R
+### R
 - Website: [R Project](https://www.r-project.org/)
 - Download R: [CRAN Mirror](https://mirrors.nic.cz/R/)
 
@@ -25,7 +23,7 @@ in this course we will use the following programs. Below are instructions for in
 2. Click on the download link.
 3. Run the `.exe` file and install the program.
 
-#### RStudio
+### RStudio
 - Website: [RStudio Downloads](https://posit.co/downloads/)
 
 **For Windows installation:**
@@ -48,14 +46,14 @@ in this course we will use the following programs. Below are instructions for in
 BiocManager::install("phyloseq")
 ```
 
-#### MobaXterm
+### MobaXterm
 - Website: [MobaXterm Downloads](https://mobaxterm.mobatek.net/download.html)
 
 **For Windows installation:**
 1. Select the Home edition.
 2. Select the portable edition and download it.
 
-#### SEED2
+### SEED2
 - Website: [SEED2 Downloads](https://www.biomed.cas.cz/mbu/lbwrf/seed/help.php)
 
 **For Windows installation:**
@@ -83,6 +81,9 @@ BiocManager::install("phyloseq")
 1. Download the latest release from the [GitHub repository](https://github.com/rambaut/figtree/releases).
 2. After unzipping, the program is ready to use.
 
+
+
+
 ## Getting Access to MetaCentrum
 
 ### Create Your Personal Account on MetaCentrum
@@ -90,15 +91,15 @@ BiocManager::install("phyloseq")
 - Account creation: [Create an Account](https://docs.metacentrum.cz/access/account/)
 
 **For all employees and students of research organizations in the Czech Republic:**
-1. Create your login and password: e.g., `skaloudova`, `K35++sp………`
-2. Description of planned activity: `Analysis of Illumina amplicon sequences (DNA metabarcoding).`
+1. Create your login and password
+2. Fill Description of planned activity: e.g., `Analysis of Illumina amplicon sequences (DNA metabarcoding).`
 3. Participation in big projects: `No projects`
 4. Become a MetaCentrum member.
 
 **Note:** The request is usually approved within a few hours.
 
 ### Information about MetaCentrum
-- Detailed course by Vojta Zeiska: `Course of work in Linux command line not only for MetaCentrum`
+- Become familiar with MetaCentrum (see Documentation)
 - **Frontend Access**: 
   - MetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
   - **Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
