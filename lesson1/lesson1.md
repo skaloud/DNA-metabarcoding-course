@@ -1,19 +1,22 @@
-# Lesson 1: Installation of Programs & Getting Access to MetaCentrum
+# Lesson 1: 
 
-## Programs Used in the Course
+## Installation of Programs & Getting Access to MetaCentrum
+
+### Programs Used in the Course
 in this course we will use the following programs. Below are instructions for installing them.
 
 - **Spreadsheet viewer** (MS Excel, OpenOffice Calc, Google Sheets, etc.)
+- **R**
+- **RStudio**
 - **MobaXterm**
-- **R, RStudio**
 - **SEED2**
-- **Any program to edit alignments** (e.g., MEGA)
+- **Any program to edit alignments** (we will use the MEGA software)
 - **IQ-TREE**
 - **FigTree**
 
-## Installation Instructions
+### Installation Instructions
 
-### R
+#### R
 - Website: [R Project](https://www.r-project.org/)
 - Download R: [CRAN Mirror](https://mirrors.nic.cz/R/)
 
@@ -22,7 +25,7 @@ in this course we will use the following programs. Below are instructions for in
 2. Click on the download link.
 3. Run the `.exe` file and install the program.
 
-### RStudio
+#### RStudio
 - Website: [RStudio Downloads](https://posit.co/downloads/)
 
 **For Windows installation:**
@@ -40,20 +43,19 @@ in this course we will use the following programs. Below are instructions for in
    - `vegan`
    - `phytools`
    - `BiocManager`
-
-**To install the PhyloSeq library, type:**
+3. To install the PhyloSeq library, type:
 ```r
 BiocManager::install("phyloseq")
 ```
 
-### MobaXterm
+#### MobaXterm
 - Website: [MobaXterm Downloads](https://mobaxterm.mobatek.net/download.html)
 
 **For Windows installation:**
 1. Select the Home edition.
 2. Select the portable edition and download it.
 
-### SEED2
+#### SEED2
 - Website: [SEED2 Downloads](https://www.biomed.cas.cz/mbu/lbwrf/seed/help.php)
 
 **For Windows installation:**
