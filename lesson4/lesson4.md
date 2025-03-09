@@ -14,7 +14,7 @@ sudo apt-get install python-biopython
 ```
 
 ### Install PANDAseq
-[PANDAseq Assembler](https://github.com/neufeld/pandaseq/wiki/PANDAseq-Assembler)
+- Documentation: [PANDAseq Assembler](https://github.com/neufeld/pandaseq/wiki/PANDAseq-Assembler)
 ```bash
 sudo apt-add-repository ppa:neufeldlab/ppa && sudo apt-get update && sudo apt-get install pandaseq
 ```
@@ -25,7 +25,7 @@ sudo apt install cutadapt
 ```
 
 ### Install fqgrep
-[fqgrep GitHub](https://github.com/indraniel/fqgrep/wiki)
+- Documentation: [fqgrep GitHub](https://github.com/indraniel/fqgrep/wiki)
 ```bash
 sudo apt-get install libtre-dev libtre5
 sudo apt-get install zlib1g zlib1g-dev
@@ -38,7 +38,7 @@ cd ..
 ```
 
 ### Install fastx
-[fastx_toolkit installation](http://hannonlab.cshl.edu/fastx_toolkit/install_ubuntu.txt)
+- Documentation: [fastx_toolkit installation](http://hannonlab.cshl.edu/fastx_toolkit/install_ubuntu.txt)
 ```bash
 sudo apt-get install gcc g++ pkg-config wget
 gcc -v  # check the version - it must be at least 4.2
@@ -63,21 +63,21 @@ cd ..
 ```
 
 ### Install vsearch
-[vsearch manual](https://manpages.debian.org/stretch/vsearch/vsearch.1.en.html)
+- Documentation: [vsearch manual](https://manpages.debian.org/stretch/vsearch/vsearch.1.en.html)
 ```bash
 sudo apt-get update -y
 sudo apt-get install -y vsearch
 ```
 
 ### Install fastQC
-[fastQC project](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- Documentation: [fastQC project](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 ```bash
 sudo apt install default-jre
 sudo apt install fastqc
 ```
 
 ### Install swarm
-[swarm manual](https://github.com/torognes/swarm/blob/master/man/swarm_manual.pdf)
+- Documentation: [swarm manual](https://github.com/torognes/swarm/blob/master/man/swarm_manual.pdf)
 ```bash
 git clone https://github.com/torognes/swarm.git
 cd swarm/
@@ -147,4 +147,4 @@ conda create --name py2 python=2.7
 
 ---
 
-[Previous Lesson](../lesson3/lesson3.md) | [Next Lesson](../lesson5/lesson5.md)
+[Lesson 3](../lesson3/lesson3.md) | [Lesson 5](../lesson5/lesson5.md)
