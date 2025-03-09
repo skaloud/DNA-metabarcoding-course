@@ -1,6 +1,6 @@
 # Lesson 8: Preparing the Swarm Table and BLAST Searches
 
-In this lesson, we will prepare the swarm table, perform BLAST searches and identify species.
+This lesson provides detailed instructions for preparing the swarm table and performing BLAST searches, including identifying species of interest, processing replicates, extracting green algal amplicons, aligning sequences, inferring phylogenetic trees, and creating taxonomic assignments.
 
 ## Preparing the Swarm Table
 
