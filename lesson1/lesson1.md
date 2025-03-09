@@ -107,9 +107,7 @@ BiocManager::install("phyloseq")
 ### Different Uses of MetaCentrum
 1. **Computing**:
    - **Interactive jobs**: For testing calculations, debugging errors, etc.
-     ```bash
-     qsub -I -l select=1:ncpus=4 -l walltime=2:00:00 # submit interactive job
-     ```
+     
    - **Batch job**: Once everything is debugged, calculations are typically run via batch jobs, where you prepare a script that defines data upload, calculations, and saving the results back to the account.
 
 2. **OnDemand**:
