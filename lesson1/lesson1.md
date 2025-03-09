@@ -96,19 +96,16 @@ BiocManager::install("phyloseq")
 3. Participation in big projects: `No projects`
 4. Become a MetaCentrum member.
 
-**Note:** The request is usually approved within a few hours.
-
-### Information about MetaCentrum
-- Become familiar with MetaCentrum (see Documentation)
-- **Frontend Access**: 
-  - MetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
-  - **Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
 
 ### Different Uses of MetaCentrum
 1. **Computing**:
    - **Interactive jobs**: For testing calculations, debugging errors, etc.
      
    - **Batch job**: Once everything is debugged, calculations are typically run via batch jobs, where you prepare a script that defines data upload, calculations, and saving the results back to the account.
+
+**Note:** TMetaCentrum can be accessed via several frontends. If one is not working, you can access your account from another frontend.
+**Important**: Do not perform any calculations or upload large data (over 10 GB) directly on the frontend, as it slows down the work for everyone. If your work is slow, consider switching to another frontend.
+
 
 2. **OnDemand**:
    - Access MetaCentrum via selected programs (e.g., running R Studio to speed up complex R calculations).
