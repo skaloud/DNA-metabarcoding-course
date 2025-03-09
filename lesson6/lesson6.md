@@ -1,4 +1,4 @@
-# Module 6 - Lesson 1
+# Lesson 6
 
 ## Data analysis - processing of replicates
 
