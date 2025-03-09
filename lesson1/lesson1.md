@@ -87,7 +87,6 @@ BiocManager::install("phyloseq")
 
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
-   - To `RUN2`:
      - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
      - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
 
