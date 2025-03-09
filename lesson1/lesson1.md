@@ -1,4 +1,18 @@
-# Lesson 1: Installation of Programs, Download Data & Getting Access to MetaCentrum
+# Lesson 1: Introduction and Setup
+
+In this lesson, we will introduce the course and set up the necessary environment for DNA metabarcoding data analysis.
+
+## Course Overview
+
+During this course, we will cover the following topics:
+1. Accessing the virtual machine and introduction to Linux commands
+2. Installing necessary programs
+3. Uploading and inspecting Fastq data
+4. DNA metabarcoding data analysis for processing RUN1 and RUN2 data
+5. Demultiplexing and clustering DNA metabarcoding data
+6. Comparing replicates and merging by taxonomy
+7. Extracting sequences from selected swarms
+
 
 ## Programs Used in the Course
 in this course we will use the following programs. Below are instructions for installing them.
@@ -82,15 +96,23 @@ BiocManager::install("phyloseq")
 2. After unzipping, the program is ready to use.
 
 ## Download Data
-- In this course, we will work on data related to a study on the soil diversity of green algae in various parts of Europe.
-- The data consists of paired-end fastq reads from two replicate runs (**Note**: The files are large!)
-- Please download these four files and store them in your computer:
+In this course, we will work on data related to a study on the soil diversity of green algae in various parts of Europe.
+The data consists of paired-end fastq reads from two replicate runs (**Note**: The files are large!)
+Please download these four files and store them in your computer:
 
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
      - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
      - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
      - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
 
+In addition, download the other files which will be used during the course:
+- [forward_labels.csv](data/forward_labels.csv) = list of forward indexes (Lesson 7)
+- [reverse_labels.csv](link-to-file) = list of reverse indexes (Lesson 7)
+- [barcodes.xlsx](link-to-file) = the table of sample and barcode information
+- [generating codes.R](link-to-file) = R script to generate the Linux codes for (Lesson 7)
+- [comparing_replicates.R](link-to-file) = R script to compare the replicates (Lesson 8)
+- [selection_of_sequences.R](link-to-file) = R script to extract the sequences of selected swarms (Lesson 8)
+- [merging_by_taxonomy.R](link-to-file) = R script to merge swarms identified to belong to the same species (Lesson 8)
 
 ## Getting Access to MetaCentrum
 
