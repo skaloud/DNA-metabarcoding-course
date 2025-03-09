@@ -51,4 +51,4 @@ In this lesson, we will learn how to use MobaXterm to access the virtual machine
 
 ---
 
-[Previous Lesson](../Lesson2/lesson1.md) | [Next Lesson](../Lesson4/lesson1.md)
+[Previous Lesson](../lesson2/lesson2.md) | [Next Lesson](../lesson4/lesson4.md)
