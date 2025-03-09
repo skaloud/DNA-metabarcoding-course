@@ -1,4 +1,4 @@
-# Lesson 1: Installation of Programs & Getting Access to MetaCentrum
+# Lesson 1: Installation of Programs, Download Data & Getting Access to MetaCentrum
 
 ## Programs Used in the Course
 in this course we will use the following programs. Below are instructions for installing them.
@@ -81,7 +81,15 @@ BiocManager::install("phyloseq")
 1. Download the latest release from the [GitHub repository](https://github.com/rambaut/figtree/releases).
 2. After unzipping, the program is ready to use.
 
+## Download Data
+- In this course, we will work on data related to a study on the soil diversity of green algae in various parts of Europe.
+- The data are paired-end fastq reads from two replicate runs (**Note**: The files are big!)
 
+     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
+     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
+   - To `RUN2`:
+     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
+     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
 
 
 ## Getting Access to MetaCentrum
