@@ -150,7 +150,7 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
 
 ### Excercises
 
-1. **Extract reads whose titles contain 12801 and save them to the file barcode.fastq.gz**
+1. **Extract reads whose titles contain the number 12801 and save them to the file barcode.fastq.gz**
    - Try to use the Linux commands specified above.
    - How many reads did you extract?
 
