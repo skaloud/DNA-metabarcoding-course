@@ -30,9 +30,23 @@ cd /home/ubuntu/RUN1
 
 We can quickly peek into a compressed file without fully decompressing it using pipes.
 
-### Viewing Files
-- **cat**: Command to display file contents
-- **zcat**: Command to decompress and display file contents
+### Commands for Viewing Files and Searching Data
+- `cat`: Command to display file contents
+- `zcat`: Command to decompress and display file contents
+- `wc` : Counts lines, words, and characters in a file.
+   - `wc -l` : Counts the number of lines.
+- `awk`: text-processing tool that allows you to manipulate data and generate reports.
+   - `awk '{print $1/4}'` : Divide the count by 4 and print the result.
+- `cut` : Removes sections from each line of files.
+- `sort` : Sorts lines of text files.
+   - `sort -n -r`: Sorts lines of text files numerically in reverse order. 
+- `grep` : Searches for patterns within files.
+   - `grep "^@"` : Searches for lines that start with @.
+   - `grep "^@" -A2` : Searches for lines that start with @ and also prints two lines immediately following each match.
+   - `grep -v "^@"` : Searches for lines that do not start with @.
+   - `grep --color=always` : Highlights the matched pattern in color.
+   - `grep "^@"` : Searches for lines that start with @.
+
 
 ### Inspecting FASTQ Sequences
 ```bash
@@ -85,9 +99,9 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
 
 5. **Count the number of sequences with a specific barcode**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
    ```
 
 6. **Extract all barcodes with their counts**:
