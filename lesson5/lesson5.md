@@ -26,9 +26,6 @@ In this lesson, we will upload and inspect Fastq data from a study on the soil d
 cd /home/ubuntu/RUN1
 ```
 
-### Using Pipes (|) – Command Chaining
-
-We can quickly peek into a compressed file without fully decompressing it using pipes.
 
 ### Commands for Viewing Files and Searching Data
 - `cat`: Command to display file contents
@@ -43,9 +40,15 @@ We can quickly peek into a compressed file without fully decompressing it using 
 - `grep` : Searches for patterns within files.
    - `grep "^@"` : Searches for lines that start with @.
    - `grep "^@" -A2` : Searches for lines that start with @ and also prints two lines immediately following each match.
+   - `grep -v "^--$"` : Filters out lines that consist solely of --, inserted by grep when using the -A option.
    - `grep -v "^@"` : Searches for lines that do not start with @.
    - `grep --color=always` : Highlights the matched pattern in color.
    - `grep "^@"` : Searches for lines that start with @.
+
+
+### Using Pipes (|) – Command Chaining
+
+We can quickly peek into a compressed file without fully decompressing it using pipes.
 
 
 ### Inspecting FASTQ Sequences
@@ -121,6 +124,16 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
    # Verify the extraction
    zcat subset_220902_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
+### Excercises
+
+1. **Extract reads whose titles contain 12801 and save them to the file barcode.fastq.gz**
+   - Try to use the Linux commands specified above.
+   - How many reads did you extract?
+
+2. **Determine the average length of all reads in the file barcode.fastq.gz**
+   - Try to use AI tools to generate the script.
+
+
 
 ### Check the Quality of Data Using FastQC
 
