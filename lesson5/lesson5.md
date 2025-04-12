@@ -124,16 +124,6 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
    # Verify the extraction
    zcat subset_220902_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
-### Excercises
-
-1. **Extract reads whose titles contain 12801 and save them to the file barcode.fastq.gz**
-   - Try to use the Linux commands specified above.
-   - How many reads did you extract?
-
-2. **Determine the average length of all reads in the file barcode.fastq.gz**
-   - Try to use AI tools to generate the script.
-
-
 
 ### Check the Quality of Data Using FastQC
 
@@ -157,6 +147,17 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
    - **Overrepresented Sequences**: List of sequences that occur more frequently than expected.
    - **Adapter Content**: Ideally, there should be minimal adapter contamination.
    - **Kmer Content**: High enrichment at the beginning of sequences is OK due to the presence of barcodes.
+
+### Excercises
+
+1. **Extract reads whose titles contain 12801 and save them to the file barcode.fastq.gz**
+   - Try to use the Linux commands specified above.
+   - How many reads did you extract?
+
+2. **Determine the average length of all reads in the file barcode.fastq.gz**
+   - Try to use AI tools to generate the script.
+
+
 
 ---
 
