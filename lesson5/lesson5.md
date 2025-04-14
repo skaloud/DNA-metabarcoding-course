@@ -43,8 +43,7 @@ cd /home/ubuntu/RUN1
    - `grep -v "^--$"` : Filters out lines that consist solely of --, inserted by grep when using the -A option.
    - `grep -v "^@"` : Searches for lines that do not start with @.
    - `grep --color=always` : Highlights the matched pattern in color.
-   - `grep "^@"` : Searches for lines that start with @.
-
+   
 
 ### Using Pipes (|) – Command Chaining
 
