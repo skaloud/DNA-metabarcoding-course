@@ -96,16 +96,7 @@ BiocManager::install("phyloseq")
 2. After unzipping, the program is ready to use.
 
 ## Download Data
-In this course, we will work on data related to a study on the soil diversity of green algae in various parts of Europe.
-The data consists of paired-end fastq reads from two replicate runs (**Note**: The files are large!)
-Please download these four files and store them in your computer:
-
-     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/blnixi1krlcq0ne/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?st=rw6cqhio&dl=0)
-     - [220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/hugwzqhjgtxqv4s/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?st=xfm8dbkz&dl=0)
-     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz](https://www.dropbox.com/s/m9zzcmxiwh0rira/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?st=q8o8px4v&dl=0)
-     - [221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz](https://www.dropbox.com/s/5crbdfmukvgn75j/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?st=7kndaxxd&dl=0)
-
-In addition, download the other files which will be used during the course:
+Please download thefiles which will be used during the course:
 - [forward_labels.csv](../forward_labels.csv) = list of forward indexes (Lesson 7)
 - [reverse_labels.csv](../reverse_labels.csv) = list of reverse indexes (Lesson 7)
 - [barcodes.xlsx](../barcodes.xlsx) = the table of sample and barcode information
