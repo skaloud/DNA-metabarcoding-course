@@ -58,7 +58,7 @@ We can quickly peek into a compressed file without fully decompressing it using 
 
 ### Inspecting FASTQ Sequences
 ```bash
-zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
+zcat RUN1_R1.fastq.gz | head
 ```
 
 1. **The first line starts with @ and contains the sequence name**:
@@ -83,61 +83,61 @@ zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head
 
 1. **Count the number of sequences**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | wc -l | awk '{print $1/4}'
+   zcat RUN1_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
    Or count the occurrences of the instrument name at the start of lines:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@M01126" | wc -l
+   zcat RUN1_R1.fastq.gz | grep "^@M01126" | wc -l
    ```
 
 2. **View sequence names** (`q` to quit `more`):
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@" | more
+   zcat RUN1_R1.fastq.gz | grep "^@" | more
    ```
 
 3. **View sequences**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "^@" -A1 | grep -v "^@" | head
+   zcat RUN1_R1.fastq.gz | grep "^@" -A1 | grep -v "^@" | head
    ```
 
 4. **Search for sequences with a specific barcode**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
+   RUN1_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
    ```
 
 5. **Count the number of sequences with a specific barcode**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
+   zcat RUN1_R1.fastq.gz | grep "ACACACACGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat RUN1_R1.fastq.gz | grep "GTGTACATGAATTCCGTGAACCATCGAATCTTT" | wc -l
+   zcat RUN1_R1.fastq.gz | grep "ACACACACTCCTCCGCTTATTGATATGC" | wc -l
    ```
 
 6. **Extract all barcodes with their counts**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "@" -A 1 | grep -v "^--" | grep -v "@" | cut -c 4-11 | sort | uniq -c | sort -n -r
+   zcat RUN1_R1.fastq.gz | grep "@" -A 1 | grep -v "^--" | grep -v "@" | cut -c 4-11 | sort | uniq -c | sort -n -r
    ```
 
 7. **Check for Illumina adapters in sequences**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC" | wc -l
+   zcat RUN1_R1.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC" | wc -l
    ```
 
 8. **Extract the first 1 million reads**:
    ```bash
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz | head -n 4000000 | gzip > subset_220902_R1.fastq.gz
-   zcat 220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz | head -n 4000000 | gzip > subset_220902_R2.fastq.gz
+   zcat RUN1_R1.fastq.gz | head -n 4000000 | gzip > subset_R1.fastq.gz
+   zcat RUN1_R1.fastq.gz | head -n 4000000 | gzip > subset_R2.fastq.gz
    # Verify the extraction
-   zcat subset_220902_R1.fastq.gz | wc -l | awk '{print $1/4}'
+   zcat subset_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
 
 ### Check the Quality of Data Using FastQC
 
 1. **Analyze a subset of data to speed up the process**:
    ```bash
-   fastqc subset_220902_R1.fastq.gz
+   fastqc subset_R1.fastq.gz
    # Open the resulting HTML file in a web browser
    # Repeat for the paired-end sequences
-   fastqc subset_220902_R2.fastq.gz
+   fastqc subset_R2.fastq.gz
    ```
 
 2. **FastQC Report**:
