@@ -14,6 +14,14 @@ sudo apt install rename
 sudo apt-get install python-biopython
 ```
 
+If python-biophython installation fails, try these commands instead:
+```sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install python3-pip
+```
+
+
 ### Install PANDAseq
 - Documentation: [PANDAseq Assembler](https://github.com/neufeld/pandaseq/wiki/PANDAseq-Assembler)
 ```bash
