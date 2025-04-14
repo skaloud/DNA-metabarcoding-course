@@ -133,19 +133,19 @@ bash ../../../scripts/demultiplex.sh forward_labels.csv reverse_labels.csv ../5-
 ### Produce Subsets for RUN2
 ```bash
 cd /home/ubuntu/RUN2
-zcat 221122_R1.fastq.gz | head -n 4000000 | gzip > subset_221122_R1.fastq.gz
-zcat 221122_R2.fastq.gz | head -n 4000000 | gzip > subset_221122_R2.fastq.gz
+zcat RUN2_R1.fastq.gz | head -n 4000000 | gzip > subset_R1.fastq.gz
+zcat RUN2_R2.fastq.gz | head -n 4000000 | gzip > subset_R2.fastq.gz
 ```
 
 ### Unzip the Sequences
 ```bash
-gunzip subset_221122_R1.fastq.gz
-gunzip subset_221122_R2.fastq.gz
+gunzip subset_R1.fastq.gz
+gunzip subset_R2.fastq.gz
 ```
 
 ### Quality Filtering
 ```bash
-perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_221122_R1.fastq -rw subset_221122_R2.fastq -sc 33 -q 26 -l 150 -ld N
+perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_R1.fastq -rw subset_R2.fastq -sc 33 -q 26 -l 150 -ld N
 ```
 
 **Output**:
