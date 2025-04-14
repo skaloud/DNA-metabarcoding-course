@@ -125,7 +125,7 @@ zcat RUN1_R1.fastq.gz | head
 8. **Extract the first 1 million reads**:
    ```bash
    zcat RUN1_R1.fastq.gz | head -n 4000000 | gzip > subset_R1.fastq.gz
-   zcat RUN1_R1.fastq.gz | head -n 4000000 | gzip > subset_R2.fastq.gz
+   zcat RUN1_R2.fastq.gz | head -n 4000000 | gzip > subset_R2.fastq.gz
    # Verify the extraction
    zcat subset_R1.fastq.gz | wc -l | awk '{print $1/4}'
    ```
