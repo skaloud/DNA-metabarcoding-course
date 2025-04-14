@@ -3,7 +3,7 @@
 In this lesson, we will install all the necessary programs needed to analyze DNA metabarcoding data into the "programs" folder. Additionally, we will download and configure essential scripts.
 
 ## Install Necessary Programs
-Run all commands one by one.
+Run all commands one by one (line by line).
 
 ### Install make, gcc, python
 ```bash
