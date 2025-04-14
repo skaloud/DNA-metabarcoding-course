@@ -35,7 +35,8 @@ cd /home/ubuntu/RUN1
 
 
 ### Commands for Viewing Files and Searching Data
-- `cat`: Command to display file contents
+- `cat`: 
+![A Cat](../cat.jpg) Command to display file contents
 - `zcat`: Command to decompress and display file contents
 - `wc` : Counts lines, words, and characters in a file.
    - `wc -l` : Counts the number of lines.
