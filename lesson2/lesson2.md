@@ -30,7 +30,7 @@ Follow the steps provided in the [Getting Started Guide](https://docs.e-infra.cz
 
 ### 2. Update Security Group
 1. Navigate to `Network` -> `Security Groups`
-2. Click on `Manage Rules` under the **ssh** name
+2. Click on `Manage Rules` under the **default** name
 3. Add the following rules:
    - Rule: `SSH`, do not modify other fields
    - Rule: `all ICMP`, do not modify other fields
