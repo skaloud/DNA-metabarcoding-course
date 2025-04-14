@@ -96,7 +96,7 @@ BiocManager::install("phyloseq")
 2. After unzipping, the program is ready to use.
 
 ## Download Data
-Please download thefiles which will be used during the course:
+Please download the files which will be used during the course:
 - [forward_labels.csv](../forward_labels.csv) = list of forward indexes (Lesson 7)
 - [reverse_labels.csv](../reverse_labels.csv) = list of reverse indexes (Lesson 7)
 - [barcodes.xlsx](../barcodes.xlsx) = the table of sample and barcode information
