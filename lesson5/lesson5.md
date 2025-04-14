@@ -15,14 +15,14 @@ In this lesson, we will upload and inspect Fastq data from a study on the soil d
 
    ```bash
    cd /home/ubuntu/RUN1
-   wget https://www.dropbox.com/scl/fi/jja3nnqx62jf6ejrjchv0/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?rlkey=759uxqy4nobgf6fjnuis0deit&st=6btho73u&dl=0
-   wget https://www.dropbox.com/scl/fi/n8tpelq3osyrly13ph2el/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?rlkey=oiw4r8ia7m47upgjkghrl8bvv&st=e5vht8w6&dl=0
+   wget -O RUN1_R1.fastq.gz "https://www.dropbox.com/scl/fi/jja3nnqx62jf6ejrjchv0/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R1.fastq.gz?rlkey=759uxqy4nobgf6fjnuis0deit&st=6btho73u&dl=0"
+   wget -O RUN1_R2.fastq.gz "https://www.dropbox.com/scl/fi/n8tpelq3osyrly13ph2el/220902_SN1126_A_L001_AUHP-8_AdapterTrimmed_R2.fastq.gz?rlkey=oiw4r8ia7m47upgjkghrl8bvv&st=e5vht8w6&dl=0"
    ```
 
    ```bash
    cd /home/ubuntu/RUN2
-   wget https://www.dropbox.com/scl/fi/tr47hd2sqynqcmsijavf5/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?rlkey=3ovavfp2rny1couc2415whhbh&st=dyk2ohfi&dl=0
-   wget https://www.dropbox.com/scl/fi/vxoibimexd7667e9do1lv/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?rlkey=2qad5249c1lscce7xf5aqzhea&st=zt3r97ni&dl=0
+   wget -O RUN2_R1.fastq.gz "https://www.dropbox.com/scl/fi/tr47hd2sqynqcmsijavf5/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R1.fastq.gz?rlkey=3ovavfp2rny1couc2415whhbh&st=dyk2ohfi&dl=0"
+   wget -O RUNě_R1.fastq.gz "https://www.dropbox.com/scl/fi/vxoibimexd7667e9do1lv/221122_SN6662_A_L001_AUHP-11_AdapterTrimmed_R2.fastq.gz?rlkey=2qad5249c1lscce7xf5aqzhea&st=zt3r97ni&dl=0"
    ```
 
 ## Basic Work with Large Files
