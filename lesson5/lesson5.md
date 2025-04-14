@@ -1,6 +1,7 @@
 # Lesson 5: Uploading and Inspecting Fastq Data
 
 In this lesson, we will upload and inspect Fastq data from a study on the soil diversity of green algae in various parts of Europe.
+The data consists of paired-end fastq reads from two replicate runs (Note: The files are large).
 
 ## Upload Raw Data
 
