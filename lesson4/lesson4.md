@@ -136,7 +136,7 @@ conda create --name py2 python=2.7
 4. Save (Ctrl-S), select Autosave.
 5. Allow permission to write:
    ```bash
-   cd ../scripts
+   cd scripts
    chmod +x demultiplex.sh
    ```
 
