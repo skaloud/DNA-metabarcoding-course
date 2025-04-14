@@ -7,8 +7,8 @@ In this lesson, we will process the data from RUN1 and RUN2 to analyze DNA metab
 ### Unzip the Sequences
 ```bash
 cd /home/ubuntu/RUN1
-gunzip subset_220902_R1.fastq.gz
-gunzip subset_220902_R2.fastq.gz
+gunzip subset_R1.fastq.gz
+gunzip subset_R2.fastq.gz
 ```
 
 ### Quality Filtering
@@ -21,7 +21,7 @@ We will use the `Reads_Quality_Length_distribution.pl` script to filter out low-
 - `ld`: give read length distribution
 
 ```bash
-perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_220902_R1.fastq -rw subset_220902_R2.fastq -sc 33 -q 26 -l 150 -ld N
+perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_R1.fastq -rw subset_R2.fastq -sc 33 -q 26 -l 150 -ld N
 ```
 
 **Output**:
