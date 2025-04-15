@@ -28,6 +28,12 @@ sudo apt-get install python3-pip
 sudo apt-add-repository ppa:neufeldlab/ppa && sudo apt-get update && sudo apt-get install pandaseq
 ```
 
+If this installation does not work, type:
+```
+conda install -c bioconda pandaseq
+sudo apt-get install libltdl7
+```
+
 ### Install cutadapt
 ```bash
 sudo apt install cutadapt
