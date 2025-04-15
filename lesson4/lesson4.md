@@ -109,6 +109,7 @@ $HOME/miniconda/bin/conda init
 conda --version
 conda install -c anaconda biopython
 conda create --name py2 python=2.7
+conda install biopython (use this extra command only if you have problems with running python2)
 ```
 
 ## Save Necessary Scripts into the "scripts" Folder
