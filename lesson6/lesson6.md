@@ -80,7 +80,7 @@ mkdir green_algae
 
 Remove primer artifacts using `remove_multiprimer.py`.
 ```bash
-python ../scripts/remove_multiprimer.py -i paired_assembled.fastq -o green_algae/paired_assembled.NOmultiprimer_ready.fastq -f GAATTCCGTGAACCATCGAATCTTT -r TCCTCCGCTTATTGATATGC
+python2 ../scripts/remove_multiprimer.py -i paired_assembled.fastq -o green_algae/paired_assembled.NOmultiprimer_ready.fastq -f GAATTCCGTGAACCATCGAATCTTT -r TCCTCCGCTTATTGATATGC
 ```
 
 Change to the new folder.
