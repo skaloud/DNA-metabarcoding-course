@@ -45,7 +45,7 @@ Follow the steps provided in the [Getting Started Guide](https://docs.e-infra.cz
 5. Select Boot Source:
    - Image: `1000GB`
    - Delete Volume on Instance Delete: `YES`
-   - Choose machine (any Ubuntu)
+   - Choose machine (bionic recommended)
 6. Click `Next`
 7. Select Flavor:
    - Flavor: `e1.2core-30ram (30GB)`
