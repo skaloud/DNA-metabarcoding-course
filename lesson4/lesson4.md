@@ -34,9 +34,10 @@ conda install -c bioconda pandaseq
 sudo apt-get install libltdl7
 ```
 
-### Install cutadapt
+### Install Trim Galore
 ```bash
-sudo apt install cutadapt
+curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.10.tar.gz -o trim_galore.tar.gz
+tar xvzf trim_galore.tar.gz
 ```
 
 ### Install fqgrep
