@@ -1,6 +1,6 @@
 # Lesson 4: Installing Programs and Scripts for DNA Metabarcoding Data Analysis
 
-In this lesson, we will install all the necessary programs needed to analyze DNA metabarcoding data into the "programs" folder. Additionally, we will download and configure essential scripts.
+In this lesson, we will install all the necessary programs needed to analyze DNA metabarcoding data. Additionally, we will download and configure essential scripts.
 
 ## Install Necessary Programs
 Run all commands one by one (line by line).
@@ -34,6 +34,12 @@ conda install -c bioconda pandaseq
 sudo apt-get install libltdl7
 ```
 
+### Create the "programs" folder
+```bash
+mkdir programs
+cd programs
+```
+
 ### Install Trim Galore
 ```bash
 curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.10.tar.gz -o trim_galore.tar.gz
@@ -45,8 +51,6 @@ tar xvzf trim_galore.tar.gz
 ```bash
 sudo apt-get install libtre-dev libtre5
 sudo apt-get install zlib1g zlib1g-dev
-mkdir programs
-cd programs
 git clone https://github.com/indraniel/fqgrep.git
 cd fqgrep
 make
@@ -112,6 +116,12 @@ conda install -c anaconda biopython
 conda create --name py2 python=2.7
 conda install biopython (use this extra command only if you have problems with running python2)
 ```
+
+### Exit the "programs" folder
+```bash
+cd ..
+```
+
 
 ## Save Necessary Scripts into the "scripts" Folder
 
