@@ -49,6 +49,51 @@ In this lesson, we will learn how to use MobaXterm to access the virtual machine
 - `more` : View a text file (spacebar = next page, `q` to quit)
 - `TAB` : Auto-complete command or file name
 
+### Introduction to Bash For-Loops (Repeating Commands)
+
+In Linux, it is common to perform the same operation on many files — for example, processing all .fastq files in a directory. To automate this, we use a for-loop in the Bash shell.
+
+#### Basic structure of a for-Loop:
+```bash
+for VARIABLE in list_of_items; do
+    command_using_$VARIABLE
+done
+```
+- `for VARIABLE in ...` : Iterates over all items in the list
+- `do ... done` : Block of commands executed for each item
+- `$VARIABLE` : The current item (e.g., a filename)
+
+#### Simple Example:
+```bash
+for f in *.txt; do
+    echo "File: $f"
+done
+```
+What happens:
+- `*.txt` : Expands to all .txt files in the directory
+- The loop prints each filename one by one
+
+#### Working With Filenames (Removing Extensions):
+```bash
+base=${f%.fastq}
+```
+- `${f%.fastq}` removes the `.fastq` suffix from the variable `$f`
+
+#### Example: Renaming All .txt Files
+The following loop renames all `.txt` files by adding a `_backup` suffix before the extension:
+```bash
+for f in *.txt; do
+    base=${f%.txt}
+    mv "$f" "${base}_backup.txt"
+done
+```
+Explanation:
+- `for f in *.txt` : Iterates over all .txt files
+- `base=${f%.txt}` : Extracts the filename without the .txt extension
+- `mv "$f" "${base}_backup.txt"` : Renames each file to include _backup
+
+This simple pattern — looping over files, extracting the base name, and performing an action — is the same structure you will use later in the course for more advanced tasks.
+
 ---
 
 [Previous Lesson](../lesson2/lesson2.md) | [Next Lesson](../lesson4/lesson4.md)
