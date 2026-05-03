@@ -9,6 +9,7 @@ While in the previous analysis we processed individual sequencing libraries and 
 ## Copying and Renaming FASTQ Files
 
 1. **Prepare the Analysis Environment**
+
 Access your virtual machine and create a working directory for the green algae dataset:
    ```bash
    mkdir /home/ubuntu/analysis_green_algae
@@ -16,6 +17,7 @@ Access your virtual machine and create a working directory for the green algae d
    ```
 
 2. **Export the Barcode Table**
+
 On your local machine:
    - Open `barcodes.xlsx`.
    - Export it as CSV UTF‑8 (with delimiters) — this ensures the file uses semicolons (;) and UTF‑8 encoding.
