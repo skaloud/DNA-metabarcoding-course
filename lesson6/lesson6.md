@@ -63,7 +63,7 @@ Assemble forward and reverse reads using `pandaseq`.
 - `-o`: minimum read overlap between forward and reverse reads
 
 ```bash
-pandaseq -f filtered1.fastq -r filtered2.fastq -F -N -o 5 > paired_assembled.fastq
+pandaseq -f Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1_val_1.fq -r Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2_val_2.fq -F -N -o 5 > paired_assembled.fastq
 ```
 
 **Output**:
@@ -80,7 +80,7 @@ pandaseq -f filtered1.fastq -r filtered2.fastq -F -N -o 5 > paired_assembled.fas
 ```bash
 cat paired_assembled.fastq | wc -l | awk '{print $1/4}'
 ```
-Result: 803,907 reads
+Result: 801,752 reads
 
 ### Extract Reads by Primers
 Create a folder to store green algal sequences.
@@ -104,19 +104,18 @@ Extract reads by primers.
 - `-e`: input fastq file
 
 ```bash
-../../programs/fqgrep/fqgrep -m 2 -p 'GAATTCCGTGAACCATCGAATCTTT' -e paired_assembled.NOmultiprimer_ready.fastq > good_5-3.fastq
-../../programs/fqgrep/fqgrep -m 2 -p 'TCCTCCGCTTATTGATATGC' -e paired_assembled.NOmultiprimer_ready.fastq > good_3-5.fastq
+fqgrep -m 2 -p 'GAATTCCGTGAACCATCGAATCTTT' -e paired_assembled.NOmultiprimer_ready.fastq > good_5-3.fastq
+fqgrep -m 2 -p 'TCCTCCGCTTATTGATATGC' -e paired_assembled.NOmultiprimer_ready.fastq > good_3-5.fastq
 ```
 
 Reorient reads to 5’-3’.
 ```bash
-../../programs/fastx_toolkit-0.0.14/src/fastx_reverse_complement/fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
-cp good_5-3.fastq 5-3_oriented.fastq
+fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
 ```
 
 **Check number of reads**:
 ```bash
-cat 5-3_oriented.fastq | wc -l | awk '{print $1/4}'
+cat good_5-3.fastq | wc -l | awk '{print $1/4}'
 ```
 Result: 797,309 reads
 
@@ -133,7 +132,7 @@ Prepare CSV tables with barcodes and primers.
 
 Demultiplex into individual samples and save as FASTQ.
 ```bash
-bash ../../../scripts/demultiplex.sh forward_labels.csv reverse_labels.csv ../5-3_oriented.fastq
+bash ../../../scripts/demultiplex.sh forward_labels.csv reverse_labels.csv ../good_5-3.fastq
 ```
 
 **Results**: Individual primer combinations (samples) saved as separate FASTQ files.
@@ -165,12 +164,12 @@ perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_R1.fastq -rw sub
 
 ### Remove Adapters
 ```bash
-cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -A AGATCGGAAGAGCGTCGTGTAGGGAAAGA -o  filtered1.fastq -p filtered2.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2.fastq
+trim_galore --paired Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2.fastq --length 36
 ```
 
 ### Paired-End Assembly
 ```bash
-pandaseq -f filtered1.fastq -r filtered2.fastq -F -N -o 5 > paired_assembled.fastq
+pandaseq -f Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1_val_1.fq -r Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2_val_2.fq -F -N -o 5 > paired_assembled.fastq
 ```
 
 **Check number of reads**:
@@ -197,19 +196,18 @@ cd green_algae
 
 Extract reads by primers.
 ```bash
-../../programs/fqgrep/fqgrep -m 2 -p 'GAATTCCGTGAACCATCGAATCTTT' -e paired_assembled.NOmultiprimer_ready.fastq > good_5-3.fastq
-../../programs/fqgrep/fqgrep -m 2 -p 'TCCTCCGCTTATTGATATGC' -e paired_assembled.NOmultiprimer_ready.fastq > good_3-5.fastq
+fqgrep -m 2 -p 'GAATTCCGTGAACCATCGAATCTTT' -e paired_assembled.NOmultiprimer_ready.fastq > good_5-3.fastq
+fqgrep -m 2 -p 'TCCTCCGCTTATTGATATGC' -e paired_assembled.NOmultiprimer_ready.fastq > good_3-5.fastq
 ```
 
 Reorient reads to 5’-3’.
 ```bash
-../../programs/fastx_toolkit-0.0.14/src/fastx_reverse_complement/fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
-cp good_5-3.fastq 5-3_oriented.fastq
+fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
 ```
 
 **Check number of reads**:
 ```bash
-cat 5-3_oriented.fastq | wc -l | awk '{print $1/4}'
+cat good_5-3.fastq | wc -l | awk '{print $1/4}'
 ```
 Result: 883,065 reads
 
@@ -222,7 +220,7 @@ cd fastq
 
 Demultiplex into individual samples and save as FASTQ.
 ```bash
-bash ../../../scripts/demultiplex.sh forward_labels.csv reverse_labels.csv ../5-3_oriented.fastq
+bash ../../../scripts/demultiplex.sh forward_labels.csv reverse_labels.csv ../good_5-3.fastq
 ```
 
 **Results**: Individual primer combinations (samples) saved as separate FASTQ files.
