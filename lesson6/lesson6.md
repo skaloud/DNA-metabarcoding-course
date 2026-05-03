@@ -117,7 +117,7 @@ fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
 ```bash
 cat good_5-3.fastq | wc -l | awk '{print $1/4}'
 ```
-Result: 797,309 reads
+Result: 795,142 reads
 
 ### Demultiplexing
 Create a new directory for demultiplexed fastq files.
@@ -176,7 +176,7 @@ pandaseq -f Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_
 ```bash
 cat paired_assembled.fastq | wc -l | awk '{print $1/4}'
 ```
-Result: 889,223 reads
+Result: 888,533 reads
 
 ### Extract Reads by Primers
 Create a folder to store green algal sequences.
@@ -209,7 +209,7 @@ fastx_reverse_complement -Q33 -i good_3-5.fastq >> good_5-3.fastq
 ```bash
 cat good_5-3.fastq | wc -l | awk '{print $1/4}'
 ```
-Result: 883,065 reads
+Result: 882,371 reads
 
 ### Demultiplexing
 Create a new directory for demultiplexed fastq files.
