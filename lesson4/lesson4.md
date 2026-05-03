@@ -122,10 +122,12 @@ conda install biopython (use this extra command only if you have problems with r
 cd ..
 ```
 
-The tools we installed (fqgrep, Trim Galore, fastx_reverse_complement, etc.) are located in custom directories, not in standard system locations like /usr/bin. 
-Linux finds programs by searching through the directories listed in the PATH environment variable.
-By adding these tool directories to PATH, we allow the system to run them from anywhere without typing their full paths.
-After updating `.bashrc`, we reload it using `source ~/.bashrc` so the changes take effect immediately.
+### Adding program paths to the Linux system
+
+- The tools we installed (fqgrep, Trim Galore, fastx_reverse_complement, etc.) are located in custom directories, not in standard system locations like /usr/bin. 
+- Linux finds programs by searching through the directories listed in the PATH environment variable.
+- By adding these tool directories to PATH, we allow the system to run them from anywhere without typing their full paths.
+- After updating `.bashrc`, we reload it using `source ~/.bashrc` so the changes take effect immediately.
 
 ```bash
 echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fqgrep"' >> ~/.bashrc
