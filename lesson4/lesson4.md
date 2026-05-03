@@ -46,6 +46,11 @@ curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.10.tar.gz -o t
 tar xvzf trim_galore.tar.gz
 ```
 
+### Install cutadapt
+```bash
+sudo apt install cutadapt
+```
+
 ### Install fqgrep
 - Documentation: [fqgrep GitHub](https://github.com/indraniel/fqgrep/wiki)
 ```bash
