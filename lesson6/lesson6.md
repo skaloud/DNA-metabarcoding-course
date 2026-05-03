@@ -29,19 +29,29 @@ perl ../scripts/Reads_Quality_Length_distribution.pl -fw subset_R1.fastq -rw sub
 - Reads without Ns (F/R): 998,526 (99.8526%)
 - Reads without Ns, quality cutoff 26 and length cutoff 150: 805,859 (80.5859%)
 
+- We can check the summary of the quality check:
+```bash
+cat Reads_quality_and_reads_having_Ns_summary.txt
+```
+
 ### Remove Adapters
-Remove adapters and the sequences following them using `cutadapt`.
-- `-a`: forward reads
-- `-A`: reverse reads
-- `-o`, `-p`: output files for forward and reverse reads
+Remove adapters and the sequences following them using `TrimGalore`.
+- `--paired`: forward and reverse reads
+- `--length`: minimum length of a read to retain
 
 ```bash
-cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -A AGATCGGAAGAGCGTCGTGTAGGGAAAGA -o  filtered1.fastq -p filtered2.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2.fastq
+trim_galore --paired Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1.fastq Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2.fastq --length 36
 ```
 
 **Output**:
+```bash
+cat Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R1.fastq_trimming_report.txt
+```
+```bash
+cat Filtered_reads_without_Ns_quality_threshold_26_length_threshold_150_R2.fastq_trimming_report.txt
+```
 - Summary of adapter presence in %
-- Bases preceding removed sequences
+- Overview of detected adapters
 - Overview of removed sequences
 
 ### Paired-End Assembly
