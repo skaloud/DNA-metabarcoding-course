@@ -49,11 +49,69 @@ In this lesson, we will learn how to use MobaXterm to access the virtual machine
 - `more` : View a text file (spacebar = next page, `q` to quit)
 - `TAB` : Auto-complete command or file name
 
-### Introduction to Bash For-Loops (Repeating Commands)
+## Using `$` in Bash
 
-In Linux, it is common to perform the same operation on many files — for example, processing all .fastq files in a directory. To automate this, we use a for-loop in the Bash shell.
+In Bash, variables allow you to store information (such as filenames, sample IDs, or paths) and reuse it in commands. The symbol `$` is used to insert the value of a variable into a command.
 
-#### Basic structure of a for-Loop:
+#### Defining and using variables
+```bash
+alga="Chlorella"
+echo $alga
+```
+
+#### Using ${variable} inside longer strings
+
+When a variable appears inside a filename or path, the safer form `${variable}` is used:
+```bash
+base=${f%.fastq}
+src="../$library/${primerR}_${primerF}.fastq"
+```
+Curly braces clearly mark where the variable name ends, preventing ambiguity.
+
+#### Variables inside loops
+
+Variables are essential in both `for‑loops` and `while‑loops`:
+```bash
+for f in *.fastq; do
+    echo "Processing: $f"
+done
+```
+
+Here, `$f` contains the current filename.
+
+In a `while read` loop, each column from a CSV file becomes a variable:
+```bash
+while IFS=';' read -r sample info library primerF primerR; do
+    echo "Sample: $sample  Library: $library"
+done < barcodes_clean.csv
+```
+
+#### Building dynamic file paths
+
+Bioinformatics workflows often construct filenames automatically:
+```bash
+src="../$library/$sample_path/${primerR}_${primerF}.fastq"
+```
+Bash replaces each variable with its actual value, producing the correct path for each sample.
+
+#### Using echo for a dry run
+
+`echo` is commonly used to preview commands before running them:
+```bash
+echo cp "$src" "$dest"
+```
+This prints the command without executing it — a safe way to verify that variables expand correctly.
+
+
+## Introduction to Bash Loops (Repeating Commands)
+
+Linux allows you to automate repetitive tasks. In this course, you will use two types of loops:
+- **for‑loops** — iterate over files
+- **while‑read loops** — read structured data line by line (e.g., CSV tables)
+
+### 1. **For‑Loops (Repeating Commands Over Files)**
+
+#### Basic structure:
 ```bash
 for VARIABLE in list_of_items; do
     command_using_$VARIABLE
@@ -92,7 +150,37 @@ Explanation:
 - `base=${f%.txt}` : Extracts the filename without the .txt extension
 - `mv "$f" "${base}_backup.txt"` : Renames each file to include _backup
 
-This simple pattern — looping over files, extracting the base name, and performing an action — is the same structure you will use later in the course for more advanced tasks.
+### 2. **While‑Read Loops (Processing Tables Like CSV Files)**
+
+While‑loops are useful when you need to read **structured data**, such as a CSV file with multiple columns.
+
+#### Basic structure:
+```bash
+while IFS=';' read -r col1 col2 col3; do
+    # use $col1, $col2, $col3
+done < filename.csv
+```
+- `while ...; do ... done` : Repeats the block for each line of the file
+- `IFS=';'` : Sets the input field separator to semicolon — needed for CSV files exported from Excel
+- `read -r sample info library primerF primerR` : Reads one line and splits it into variables
+- `< filename.csv` : Redirects the file as input to the loop
+
+#### Example Used in This Course: Generating Copy Commands:
+```bash
+while IFS=';' read -r sample info library primerF primerR; do
+    [[ "$sample" == "sample" ]] && continue
+
+    src="../$library/$sample_path/${primerR}_${primerF}.fastq"
+    dest="${sample}_${library}.fastq"
+
+    echo cp "$src" "$dest"
+done < "$input"
+```
+What happens:
+- `[[ "$sample" == "sample" ]] && continue` : Skips the header line
+- `src=...` : Builds the path to the original FASTQ file.
+- `dest=... : Defines the new filename.
+- `echo cp "$src" "$dest"` : Prints the command instead of running it — this is called a dry run.
 
 ---
 
