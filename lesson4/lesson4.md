@@ -117,11 +117,20 @@ conda create --name py2 python=2.7
 conda install biopython (use this extra command only if you have problems with running python2)
 ```
 
-### Exit the "programs" folder
+### Exit the "programs" folder and put program path into Linux system
 ```bash
 cd ..
 ```
 
+The tools we installed (fqgrep, Trim Galore, fastx_reverse_complement, etc.) are located in the specific directories, not in standard system locations like /usr/bin. By adding these directories to PATH, Linux will find them automatically, without writing the full path. After specifying all paths, we will use 'source ~/.bashrc' to reload the file '.bashrc' to apply the changes immediately.
+
+```bash
+echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fqgrep"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/TrimGalore-0.6.10"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fqgrep"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fastx_toolkit-0.0.14/src/fastx_reverse_complement"' >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Save Necessary Scripts into the "scripts" Folder
 
