@@ -10,7 +10,7 @@ While in the previous analysis we processed individual sequencing libraries and 
 
 1. **Prepare the Analysis Environment**
 
-Access your virtual machine and create a working directory for the green algae dataset:
+   Access your virtual machine and create a working directory for the green algae dataset:
    ```bash
    mkdir /home/ubuntu/analysis_green_algae
    cd /home/ubuntu/analysis_green_algae
@@ -18,32 +18,56 @@ Access your virtual machine and create a working directory for the green algae d
 
 2. **Export the Barcode Table**
 
-On your local machine:
+   On your local machine:
    - Open `barcodes.xlsx`.
    - Export it as CSV UTF‑8 (with delimiters) — this ensures the file uses semicolons (;) and UTF‑8 encoding.
    - Upload the resulting `barcodes.csv` into /home/ubuntu/analysis_green_algae
 
 3. **Clean the CSV File**:
-Excel often adds a UTF‑8 BOM and Windows-style line endings. Clean the file using:
+
+   Excel often adds a UTF‑8 BOM and Windows-style line endings. Clean the file using:
    ```bash
    sed 's/\r$//' barcodes.csv | sed '1s/^\xEF\xBB\xBF//' > barcodes_clean.csv
    ```
 
 4. **Define Paths and Input File**:
-Inside your analysis directory:
+
+   Inside your analysis directory, define paths to input fastq files and to the cleaned .csv file:
    ```bash
    sample_path="green_algae/fastq"
    input="barcodes_clean.csv"
    ```
 
+5. **Generate Copy Commands (Dry Run)**:
 
+   Before copying anything, print the commands to verify that paths and filenames are correct:
+   ```bash
+   while IFS=';' read -r sample info library primerF primerR; do
+    [[ "$sample" == "sample" ]] && continue
 
-5. **Copy Files**:
-   - Copy `code.copyfiles.txt` to the `analysis_green_algae` directory and run it:
-     ```bash
-     . code.copyfiles.txt
+    src="../$library/$sample_path/${primerR}_${primerF}.fastq"
+    dest="${sample}_${library}.fastq"
+
+    echo cp "$src" "$dest"
+   done < "$input"
+   ```
+
+   Check the output carefully — it should list all expected cp commands for RUN1 and RUN2.
+
+6. **Copy Files**:
+
+   Once the dry run looks correct, remove "echo" in the script and run. This will copy and rename all FASTQ files according to the barcode table:
+   ```bash
+   while IFS=';' read -r sample info library primerF primerR; do
+    [[ "$sample" == "sample" ]] && continue
+
+    src="../$library/$sample_path/${primerR}_${primerF}.fastq"
+    dest="${sample}_${library}.fastq"
+
+    cp "$src" "$dest"
+   done < "$input"
      ```
-   - Check the sizes of files. Both MPC and NC samples should be of small size if the sequencing run and no major contamination occurred.
+   Check the sizes of files. Both MPC and NC samples should be of small size if the sequencing run and no major contamination occurred.
 
 ## Removing Primers and Labels
 
@@ -51,11 +75,14 @@ Inside your analysis directory:
    - Forward: `3 + 8 + 20 = 31`
    - Reverse: `3 + 8 + 20 = 31`
 
-2. **Run the second R script**:
-   - Check `code.removeprimers.txt` for the correct paths.
-   - Copy `code.removeprimers.txt` to the `analysis_green_algae` directory and run it:
-     ```bash
-     . code.removeprimers.txt
+2. **Remove primers and labels using cutadapt**:
+
+   Use the following loop to trim 31 bp from the 5′ end and 31 bp from the 3′ end of each read:
+    ```bash
+     for f in *.fastq; do 
+   base=${f%.fastq};
+   cutadapt -u 31 -u -31 -o "${base}_trimmed.fastq" "$f"; 
+   done
      ```
 
 ## Converting to FASTA Format
@@ -80,11 +107,25 @@ Inside your analysis directory:
 
 ## Dereplicating the Samples
 
-1. **Run the third R script**:
-   - Copy `. code.dereplicate.txt` to the `fasta` directory in the virtual machine and run it:
+1. **Run the following loop to dereplicate every .fasta file in the directory:**:
      ```bash
-     . code.dereplicate.txt
+     for f in *.fasta; do
+     base=${f%.fasta}
+     vsearch --quiet --derep_fulllength "$f" \
+            --sizeout \
+            --fasta_width 0 \
+            --relabel_sha1 \
+            --output "der_${base}.fasta"
+     done
      ```
+
+   What this script does
+   - `--derep_fulllength` : Collapses identical sequences into unique entries.
+   - `--sizeout` : Adds a `;size=X;` annotation showing how many times each sequence occurred.
+   - `--fasta_width 0` : Writes sequences in a single line (no wrapping), which is required by many tools.
+   - `--relabel_sha1` : Assigns each unique sequence a reproducible SHA‑1 hash identifier.
+   - Output files are saved as: `der_<originalname>.fasta`
+
 
 2. **Create a directory for dereplicated files**:
    ```bash
