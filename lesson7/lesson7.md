@@ -6,22 +6,37 @@ While in the previous analysis we processed individual sequencing libraries and 
 - We will work with a total of 64 samples, including NC (4x) and MPC (5x), in two replicates: REP1 and REP2.
 - Processing all these data would take a long time for the purpose of the course. Therefore, we will focus on only one area. To make it more engaging, everyone can choose either the area I'm going to demonstrate the data processing on or another area, and at the end, we can compare our results.
 
-## Setting Up the Analysis Environment
+## Copying and Renaming FASTQ Files
 
-1. **Access your virtual machine** and create a new folder for the analysis:
+1. **Prepare the Analysis Environment**
+Access your virtual machine and create a working directory for the green algae dataset:
    ```bash
    mkdir /home/ubuntu/analysis_green_algae
    cd /home/ubuntu/analysis_green_algae
    ```
 
-2. **Generate Linux Commands**:
-   - On your local machine, open the "generating codes.R" script using RStudio.
-   - Use the `barcodes.xlsx` file to generate the necessary Linux commands for the next steps. For this course, we will analyze the arctic samples (first eight barcode pairs).
-   - Run the 1st R script to copy and rename the files.
-   - Save the commands in Linux format using `dos2unix`.
-   - Check `code.copyfiles.txt` for the correct paths.
+2. **Export the Barcode Table**
+On your local machine:
+   - Open `barcodes.xlsx`.
+   - Export it as CSV UTF‑8 (with delimiters) — this ensures the file uses semicolons (;) and UTF‑8 encoding.
+   - Upload the resulting `barcodes.csv` into /home/ubuntu/analysis_green_algae
 
-3. **Copy Files**:
+3. **Clean the CSV File**:
+Excel often adds a UTF‑8 BOM and Windows-style line endings. Clean the file using:
+   ```bash
+   sed 's/\r$//' barcodes.csv | sed '1s/^\xEF\xBB\xBF//' > barcodes_clean.csv
+   ```
+
+4. **Define Paths and Input File**:
+Inside your analysis directory:
+   ```bash
+   sample_path="green_algae/fastq"
+   input="barcodes_clean.csv"
+   ```
+
+
+
+5. **Copy Files**:
    - Copy `code.copyfiles.txt` to the `analysis_green_algae` directory and run it:
      ```bash
      . code.copyfiles.txt
