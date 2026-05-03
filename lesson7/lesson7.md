@@ -4,7 +4,7 @@ While in the previous analysis we processed individual sequencing libraries and 
 
 - The aim is to process data on the diversity of green algae in the soil of different regions of Europe.
 - We will work with a total of 64 samples, including NC (4x) and MPC (5x), in two replicates: REP1 and REP2.
-- Processing all these data would take a long time for the purpose of the course. Therefore, we will focus on only one area. To make it more engaging, everyone can choose either the area I'm going to demonstrate the data processing on or another area, and at the end, we can compare our results.
+- Keep in mind that for the purposes of this course, we work only with a subset of reads, but the workflow is identical to a full dataset.
 
 ## Copying and Renaming FASTQ Files
 
@@ -89,8 +89,8 @@ While in the previous analysis we processed individual sequencing libraries and 
 
 1. **Create a new folder for trimmed sequences**:
    ```bash
-   mkdir /home/ubuntu/analysis_green_algae/fastq
-   cd /home/ubuntu/analysis_green_algae/fastq
+   mkdir fastq
+   cd fastq
    mv ../*trimmed.fastq .
    rename 's/_trimmed//' *_trimmed.fastq
    ```
@@ -119,7 +119,7 @@ While in the previous analysis we processed individual sequencing libraries and 
      done
      ```
 
-   What this script does
+   What this script does:
    - `--derep_fulllength` : Collapses identical sequences into unique entries.
    - `--sizeout` : Adds a `;size=X;` annotation showing how many times each sequence occurred.
    - `--fasta_width 0` : Writes sequences in a single line (no wrapping), which is required by many tools.
@@ -145,7 +145,7 @@ While in the previous analysis we processed individual sequencing libraries and 
 1. **Run SWARM clustering with denoising (d=3)**:
    ```bash
    screen -S swarm_analysis
-   ../../../programs/swarm/bin/swarm -d 3 -z -t 80 -i swarm_d3.struct -s amplicons_d3.stats -w swarm_REPRESENTATIVES_d3.fasta -o amplicons_d3.swarms dereplicated_global.fasta
+   swarm -d 3 -z -t 80 -i swarm_d3.struct -s amplicons_d3.stats -w swarm_REPRESENTATIVES_d3.fasta -o amplicons_d3.swarms dereplicated_global.fasta
    ```
 
 2. **Detach the screen**:
@@ -193,7 +193,7 @@ While in the previous analysis we processed individual sequencing libraries and 
    - `swarms_table.txt`
    - `representatives_d3.fas`
 
-7. **Close both MobaXterm and RStudio programs**.
+7. **Close the MobaXterm program**.
 
 ---
 
