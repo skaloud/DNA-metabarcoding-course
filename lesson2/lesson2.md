@@ -52,14 +52,20 @@ Follow the steps provided in the [Getting Started Guide](https://docs.e-infra.cz
 8. Click `Next`
 9. Select Networks:
    - Network: `internal-ipv4-general-private`
-10. Click `Launch Instance`
+10. In Security Groups, verify six rules are listed inside "default". If not, swap to "ssh" with all six rules included.
+11. Click `Launch Instance`
 
 ### 4. Associate Floating IP
 1. Navigate to `Network` -> `Floating IPs`
 2. Click on `Allocate IP to project`
    - Pool: `external`
 3. Click `Allocate IP`
-4. Click `Associate`
+4. Navigate to `Compute` -> `Instances`
+5. Click on `Associate Floating IP`
+6. Manage Floating IP Associations:
+   - Select IP address
+   - Port is pre-selected
+7. Click `Associate`
 
 ## Accessing the Virtual Machine
 
