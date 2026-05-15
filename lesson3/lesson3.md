@@ -56,7 +56,7 @@ In Bash, variables allow you to store information (such as filenames, sample IDs
 #### Defining and using variables
 ```bash
 alga="Chlorella"
-echo $alga
+echo "$alga"
 ```
 
 #### Using ${variable} inside longer strings
