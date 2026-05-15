@@ -135,10 +135,10 @@ cd ..
 - After updating `.bashrc`, we reload it using `source ~/.bashrc` so the changes take effect immediately.
 
 ```bash
-echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fqgrep"' >> ~/.bashrc
-echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/TrimGalore-0.6.10"' >> ~/.bashrc
-echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fqgrep"' >> ~/.bashrc
-echo 'export PATH="$PATH:/home/ubuntu/metabarcoding/programs/fastx_toolkit-0.0.14/src/fastx_reverse_complement"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/programs/fqgrep"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/programs/TrimGalore-0.6.10"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/programs/swarm/bin"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/ubuntu/programs/fastx_toolkit-0.0.14/src/fastx_reverse_complement"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
