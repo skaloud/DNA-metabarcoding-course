@@ -104,7 +104,7 @@ zcat RUN1_R1.fastq.gz | head
 
 4. **Search for sequences with a specific barcode**:
    ```bash
-   RUN1_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
+   zcat RUN1_R1.fastq.gz | grep --color=always "ACACACACGAATTCCGTGAACCATCGAATCTTT" | more
    ```
 
 5. **Count the number of sequences with a specific barcode**:
