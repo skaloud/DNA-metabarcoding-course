@@ -83,7 +83,6 @@ cd ..
 ### Install vsearch
 - Documentation: [vsearch manual](https://manpages.debian.org/stretch/vsearch/vsearch.1.en.html)
 ```bash
-sudo apt-get update -y
 sudo apt-get install -y vsearch
 ```
 
