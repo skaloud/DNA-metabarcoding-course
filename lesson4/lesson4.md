@@ -19,11 +19,6 @@ sudo apt-get install python3-pip
 
 ### Install PANDAseq
 - Documentation: [PANDAseq Assembler](https://github.com/neufeld/pandaseq/wiki/PANDAseq-Assembler)
-```bash
-sudo apt-add-repository ppa:neufeldlab/ppa && sudo apt-get update && sudo apt-get install pandaseq
-```
-
-If this installation does not work, type:
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
