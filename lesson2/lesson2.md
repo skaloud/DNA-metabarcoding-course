@@ -59,12 +59,7 @@ Follow the steps provided in the [Getting Started Guide](https://docs.e-infra.cz
 2. Click on `Allocate IP to project`
    - Pool: `external`
 3. Click `Allocate IP`
-4. Navigate to `Compute` -> `Instances`
-5. Click on `Associate Floating IP`
-6. Manage Floating IP Associations:
-   - Select IP address
-   - Port is pre-selected
-7. Click `Associate`
+4. Click `Associate`
 
 ## Accessing the Virtual Machine
 
