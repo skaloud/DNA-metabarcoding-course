@@ -112,7 +112,7 @@ This lesson provides detailed instructions for preparing the swarm table and per
 3. **Infer the ML tree**:
    - Open the command line and run:
      ```bash
-     iqtree -s selected_ncbi_mafft2.fas -st DNA -m GTR -bb 1000 -redo
+     iqtree3 -s selected_ncbi_mafft2.fas -st DNA -m GTR -bb 1000 -redo
      ```
    - Copy the treefile back to the working folder, open it in FigTree.
    - Select Tree – Midpoint Root and Tree – Increasing Node Order.
