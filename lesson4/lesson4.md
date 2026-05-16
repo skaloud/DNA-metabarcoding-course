@@ -111,7 +111,9 @@ $HOME/miniconda/bin/conda init
 conda --version
 conda install -c anaconda biopython
 conda create --name py2 python=2.7
-conda install biopython (use this extra command only if you have problems with running python2)
+conda activate py2
+pip install biopython==1.76
+conda deactivate
 ```
 
 ### Exit the "programs" folder and add program paths to the Linux system
