@@ -90,7 +90,9 @@ mkdir green_algae
 
 Remove primer artifacts using `remove_multiprimer.py`.
 ```bash
+conda activate py2
 python2 ../scripts/remove_multiprimer.py -i paired_assembled.fastq -o green_algae/paired_assembled.NOmultiprimer_ready.fastq -f GAATTCCGTGAACCATCGAATCTTT -r TCCTCCGCTTATTGATATGC
+conda deactivate
 ```
 
 Change to the new folder.
